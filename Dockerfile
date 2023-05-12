@@ -1,6 +1,6 @@
 # 构建可执行二进制文件
 # 指定构建的基础镜像
-FROM golang1.17.7:Alpine AS builder
+FROM golang:Alpine AS builder
 # 修改源
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 # 安装相关环境依赖
