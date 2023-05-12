@@ -8,7 +8,7 @@ RUN apk update && apk add --no-cache git bash wget curl
 # 运行工作目录
 WORKDIR /go/src/v2ray.com/core
 # 克隆源码运行安装
-RUN git clone --progress https://github.com/v2fly/v2ray-core.git . && \
+RUN wget https://github.com/v2fly/v2ray-core/archive/refs/tags/v4.45.1.tar.gz . && \
     bash ./release/user-package.sh nosource noconf codename=$(git describe --tags) buildname=docker-fly abpathtgz=/tmp/v2ray.tgz
 
 # 构建基础镜像
